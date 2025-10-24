@@ -1,10 +1,10 @@
 import os, gdown, zipfile
 #https://drive.google.com/file/d/1mq3T-wiTsSU_8ucqK-2IIoJhJNKLGvlX/view?usp=drive_link
-FILE_ID = "1mq3T-wiTsSU_8ucqK-2IIoJhJNKLGvlX"
+# 使用完整的文件链接
+FILE_URL = "https://drive.google.com/file/d/1mq3T-wiTsSU_8ucqK-2IIoJhJNKLGvlX/view?usp=drive_link"
 
 print("下载中...")
-gdown.download(f"https://drive.google.com/uc?id={FILE_ID}", 
-               "KITTI——gong.zip", quiet=False)
+gdown.download(FILE_URL, "KITTI——gong.zip", quiet=False, fuzzy=True)
 
 print("解压中...")
 with zipfile.ZipFile("KITTI——gong.zip", 'r') as z:
